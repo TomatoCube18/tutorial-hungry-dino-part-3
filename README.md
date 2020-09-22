@@ -9,7 +9,7 @@
 
 **Step 1**
 1. Open the ``||info.Info||`` drawer, drag the  ``||info.set life to 3||`` into the ``||Loops:on start||`` block
-2. Inside the ``||scene.on sprite of kind Player hits wall ||`` (RED) block,  delete the ``||game.game over ||`` block 
+2. Inside the ``||scene.on sprite of kind Player hits wall ||`` ``||variables.RED||`` block,  delete the ``||game.game over ||`` block 
 3. Open the ``||info.Info||`` drawer, drag the  ``||info.change life by -1||`` into the ``||scene.on sprite of kind Player hits wall ||`` (RED) block
 
 ### ~ tutorialhint
@@ -85,6 +85,7 @@ info.setScore(0)
 
 ### ~ tutorialhint
 ```blocks
+let level = 0
 function create_map () {
     scene.setBackgroundColor(1)
     scene.setTile(7, img`
@@ -233,14 +234,12 @@ function create_map () {
 
 ## Step 6
 **Step 6**
-1. Click on the **+** sign in the ``||logic.if true then ||`` block 
+1. Click on the **+** sign in the ``||logic.if true then ||`` block to expose the ``||logic:else||`` block
 2. Drag the  ``||scene.set tile map to ||`` into the ``||logic:else||`` block
-3. Click on the Grey color square.
-4. At the bottom left of the window, set the Image Width from 10 to **32**
-![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-1/master/assets/tilemap.gif)
 
 ### ~ tutorialhint
 ```blocks
+let level = 0
 function create_map () {
     scene.setBackgroundColor(1)
     scene.setTile(7, img`
@@ -387,25 +386,30 @@ function create_map () {
 }    
 ```
 
-       
-
-
+    
 ## Step 7
-**Step 7**
-Draw out the map using the below color tile:
-**brown** tile for ground
-**green** tile for grass
-**yellow** tile for egg
-**red** tile for ocean/fire
-**purple** tile for flag
-**blue** tile for drop off point
-[screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-1/master/assets/tilemap.gif)
-
+**Step 7**   
+1. Click on the Grey color square.
+2. At the bottom left of the window, set the Image Width from 10 to **32**
+![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-1/master/assets/tilemap.gif)
 
 
 ## Step 8
 **Step 8**
-1. Open the ``||logic.Logic||`` drawer, drag the  ``||logic.if true then ... else ...||`` into the ``||scene.on sprite of kind Player hits wall ||`` (PURPLE) block
+Draw out the map using the below color tile:
+1. **brown** tile for ground
+2. **green** tile for grass
+3. **yellow** tile for egg
+4. **red** tile for ocean/fire
+5. **purple** tile for flag
+6. **blue** tile for drop off point
+![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-1/master/assets/tilemap.gif)
+
+
+
+## Step 9
+**Step 9**
+1. Open the ``||logic.Logic||`` drawer, drag the  ``||logic.if true then ... else ...||`` into the ``||scene.on sprite of kind Player hits wall ||``  ``||game.PURPLE ||`` block
 2. Open the ``||logic.Logic||`` drawer, drag the ``||logic.0 = 0 ||`` block onto the ``||logic:true||`` block
 3. Open the ``||variables.Variables||``  drawer, drag the ``||variables.level||`` onto the first **0** value
 4. Change the second **0** value to 2
@@ -414,6 +418,7 @@ Draw out the map using the below color tile:
 
 ### ~ tutorialhint
 ```blocks
+let level = 0
 scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
     if (level = 2) {
         game.over(true)
@@ -422,15 +427,17 @@ scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
 })
 ```
 
-## Step 9
-**Step 9**
+## Step 10
+**Step 10**
 1. Open the ``||variables.Variables||``  drawer, drag the ``||variables.change level by 1||`` into the ``||logic:else||`` block
 2. Change the value of the second **0** to 1
-3. Open the ``||scene.Functions||`` drawer, drag the ``||scene.setup_level||`` function block into the ``||logic:else||`` block
+3. Click on the **Advanced** arrow to expand more category
+4. Open the ``||Functions.Functions||`` drawer, drag the ``||Functions.setup_level||`` function block into the ``||logic:else||`` block
 
 
 ### ~ tutorialhint
 ```blocks
+let level = 0
 scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
     if (level = 2) {
         game.over(true)
@@ -440,25 +447,23 @@ scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
     }
 })
 
-
-
-
-
-
-
-
-function setup_level(){}
+function setup_level () {
+    clear_level()
+    create_map()
+    create_eggs()
+    scene.placeOnRandomTile(dino, 9)
+}
 ```
 
 
 
-## Step 10
-**Step 10**
+## Step 11
+**Step 11**
 1. Open the ``||game.Game||``  drawer, drag the ``||game.splash ''||`` block into the ``||Functions.setup_level||`` block
 2. Make sure the ``||game.splash ''||`` block  is right after the ``||Functions.clear_level||`` block
-3. Open the ``||text.Text||``  drawer, drag the ``||text.join "Hello" "World" -+ ''||`` block onto the **...*** of ``||game.splash ''||`` block 
-4. Change the **Hello** to **Level ** (note the additional space after Level)
-5. Open the ``||variables.Variables||``  drawer, drag the ``||variables.level||`` onto the first **World**
+3. Open the ``||text.Text||``  drawer, drag the ``||text.join "Hello" "World" -+ ''||`` block onto the **..** of ``||game.splash ''||`` block 
+4. Change the text "**Hello**" to "**Level **" (note the additional space after Level)
+5. Open the ``||variables.Variables||``  drawer, drag the ``||variables.level||`` onto the text **World**
 
 
 ### ~ tutorialhint
@@ -477,23 +482,26 @@ function setup_level () {
 
 
 
-
+function clear_level(){}
 function create_map(){}
 function create_eggs(){}
 ```
 
 
 
-## Step 11
-**Step 11**
+## Step 12
+**Step 12**
 1. You have successfully created a game with multi-level!
-2. Now, can you add level 3 to your game?
+2. Now, can you add another level (level 3) to your game?
 3. You may refer to the image in the tutorial hint for clue ^^
 
 
+### ~ tutorialhint
+![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-1/master/assets/tilemap.gif)
 
-## Step 12 @unplugged
-** Step 12**
+
+## Step 13 @unplugged
+** Step 13**
 Congratulations! You have completed today's tutorial. 
 Test out your game. If it does not work, cross check your code with the below image.
 
