@@ -19,6 +19,8 @@ create_dino()
 info.setLife(3)
 info.setScore(0)
 
+function setup_level(){no change}
+function create_dino(){no change}
 ```
 
 ## Step 2
@@ -37,6 +39,8 @@ scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
     info.changeLifeBy(-1)
 })
 
+function setup_level(){no change}
+function create_dino(){no change}
 ```
 
 ## Step 3
@@ -421,17 +425,7 @@ Draw out a new map using the below color tiles:
 
 
 ### ~ tutorialhint
-```blocks
-  let level = 0
-  function _(){level = 1}
-scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
-
-  if (level = 2) {
-        game.over(true)
-    } else {
-    }
-})
-```
+![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-3/master/assets/Screenshot_5.png)
 
 ## Step 11
 **Step 11**
@@ -453,35 +447,26 @@ scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
 })
 
 function setup_level () {
-    clear_level()
-    create_map()
-    create_eggs()
+codes
 }
 ```
 
 ## Step 12
 **Step 12**
-1. Duplicate the ``||scene.place mySprite on top of random blue tile||`` from ``||Functions.create_dino||`` block
-2. Move the duplicated ``||scene.place mySprite on top of random blue tile||`` block into the ``||logic:else||`` block
+1. Move the ``||scene.place mySprite on top of random blue tile||`` from ``||Functions.create_dino||`` block into the ``||Functions:setup_level||`` block
 
 ### ~ tutorialhint
 ```blocks
-let level = 0
-scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
-    if (level = 2) {
-        game.over(true)
-    } else {
-        level += 1
-        setup_level()
-        scene.placeOnRandomTile(dino, 9)
-    }
-})
-
 function setup_level () {
     clear_level()
     create_map()
     create_eggs()
+    scene.placeOnRandomTile(dino, 9)
 }
+
+function create_map(){codes}
+function create_eggs(){codes}
+function clear_level(){codes}
 ```
     
 
@@ -563,7 +548,6 @@ scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
     } else {
         level += 1
         setup_level()
-        scene.placeOnRandomTile(dino, 9)
     }
 })
 function setup_level () {
@@ -571,6 +555,7 @@ function setup_level () {
     game.splash("Level " + level)
     create_map()
     create_eggs()
+    scene.placeOnRandomTile(dino, 9)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
@@ -1042,7 +1027,6 @@ function create_dino () {
     controller.moveSprite(dino, 50, 0)
     dino.ay = 290
     scene.cameraFollowSprite(dino)
-    scene.placeOnRandomTile(dino, 9)
     create_stand_animation()
     create_walking_animation()
 }
