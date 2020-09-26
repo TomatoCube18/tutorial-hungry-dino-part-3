@@ -18,9 +18,6 @@ setup_level()
 create_dino()
 info.setLife(3)
 info.setScore(0)
-
-function setup_level(){no change}
-function create_dino(){no change}
 ```
 
 ## Step 2
@@ -39,8 +36,6 @@ scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
     info.changeLifeBy(-1)
 })
 
-function setup_level(){no change}
-function create_dino(){no change}
 ```
 
 ## Step 3
@@ -435,21 +430,7 @@ Draw out a new map using the below color tiles:
 
 
 ### ~ tutorialhint
-```blocks
-let level = 0
-scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
-    if (level = 2) {
-        game.over(true)
-    } else {
-        level += 1
-        setup_level()
-    }
-})
-
-function setup_level () {
-codes
-}
-```
+![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-3/master/assets/Screenshot_6.png)
 
 ## Step 12
 **Step 12**
@@ -486,17 +467,12 @@ function setup_level () {
     game.splash("Level " + level)
     create_map()
     create_eggs()
+    scene.placeOnRandomTile(dino, 9)
 }
 
-
-
-
-
-
-
-function clear_level(){}
-function create_map(){}
-function create_eggs(){}
+function create_map(){codes}
+function create_eggs(){codes}
+function clear_level(){codes}
 ```
 
 
@@ -505,7 +481,7 @@ function create_eggs(){}
 **Step 14**
 You have successfully created a game with multi-level!
 
-**Test:** Now, can you add another level (level 3) to your game?
+**Quiz:** Can you add another level (level 3) to your game?
 (You may refer to the image in the tutorial hint for clue)
 
 
@@ -543,7 +519,7 @@ create_dino()
 info.setScore(0)
 info.setLife(3)
 scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
-    if (level == 2) {
+    if (level == 3) {
         game.over(true)
     } else {
         level += 1
