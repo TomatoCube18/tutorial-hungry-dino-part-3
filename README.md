@@ -19,15 +19,28 @@ create_dino()
 info.setLife(3)
 info.setScore(0)
 
+```
+
+## Step 2
+**Step 2**
+1. Inside the ``||scene.on sprite of kind Player hits wall ||`` ``||variables.RED||`` block,  delete the ``||game.game over ||`` block 
+2. Open the ``||info.Info||`` drawer, drag the  ``||info.change life by -1||`` into the ``||scene.on sprite of kind Player hits wall ||`` ``||variables.RED||`` block
+
+### ~ tutorialhint
+```blocks
+setup_level()
+create_dino()
+info.setLife(3)
+info.setScore(0)
+
 scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
     info.changeLifeBy(-1)
 })
 
 ```
 
-
-## Step 2
-**Step 2**
+## Step 3
+**Step 3**
 1. Duplicate the ``||scene.place mySprite on top of random blue tile||`` from ``||Functions.create_dino||`` block
 2. Move the duplicated ``||scene.place mySprite on top of random blue tile||`` block into the  ``||scene.on sprite of kind Player hits wall ||`` ``||variables.RED||`` block
 
@@ -41,8 +54,8 @@ scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
 ```
 
 
-## Step 3
-**Step 3**
+## Step 4
+**Step 4**
 1. Open the ``||music.Music||`` drawer, drag the  ``||music.play sound ba ding||`` into the same block.
 2. Change the **ba ding** to any sound of your choice.
 
@@ -56,8 +69,8 @@ scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
 ```
 
 
-## Step 4
-**Step 4**
+## Step 5
+**Step 5**
 1. Open the ``||variables.Variables||``  drawer, click on **Make a Variable...**
 2. Key in **level**, then hit **OK**
 3. Open the ``||variables.Variables||``  drawer, drag the ``||variables.set level to 0||`` into the ``||Loops:on start||`` block. Make sure the ``||variables.set level to 0||`` block is located before the ``||Functions.call setup_level||`` block
@@ -67,8 +80,8 @@ scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
 ![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-3/master/assets/Screenshot_1.png)
 
 
-## Step 5
-**Step 5**
+## Step 6
+**Step 6**
 1. Open the ``||logic.Logic||``  drawer, drag the ``||logic.if true then ||`` block into the ``||Functions.create_map||`` function. Make sure the ``||logic.if true then ||`` block is surrounding the ``||scene.set tile map to ||`` block
 2. Open the ``||logic.Logic||``  drawer, drag the ``||logic.0 = 0 ||`` block onto the ``||logic:true||`` block
 3. Open the ``||variables.Variables||``  drawer, drag the ``||variables.level||`` onto the first **0** value
@@ -223,8 +236,8 @@ function create_map () {
 
 
 
-## Step 6
-**Step 6**
+## Step 7
+**Step 7**
 1. Click on the **+** sign in the ``||logic.if true then ||`` block to expose the ``||logic:else||`` block
 2. Drag the  ``||scene.set tile map to ||`` into the ``||logic:else||`` block
 
@@ -378,15 +391,15 @@ function create_map () {
 ```
 
     
-## Step 7
-**Step 7**   
+## Step 8
+**Step 8**   
 1. Click on the Grey color square on Tilemap.
 2. At the bottom left of the window, change the Image Width from 10 to **32**
 ![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-3/master/assets/Screenshot_3.png)
 
 
-## Step 8
-**Step 8**
+## Step 9
+**Step 9**
 Draw out a new map using the below color tiles:
 1. **brown** tile for ground
 2. **green** tile for grass
@@ -398,8 +411,8 @@ Draw out a new map using the below color tiles:
 
 
 
-## Step 9
-**Step 9**
+## Step 10
+**Step 10**
 1. Open the ``||logic.Logic||`` drawer, drag the  ``||logic.if true then ... else ...||`` into the ``||scene.on sprite of kind Player hits wall ||``  ``||game.PURPLE ||`` block
 2. Open the ``||logic.Logic||`` drawer, drag the ``||logic.0 = 0 ||`` block onto the ``||logic:true||`` block
 3. Open the ``||variables.Variables||``  drawer, drag the ``||variables.level||`` onto the first **0** value
@@ -420,8 +433,8 @@ scene.onHitTile(SpriteKind.Player, 10, function (sprite) {
 })
 ```
 
-## Step 10
-**Step 10**
+## Step 11
+**Step 11**
 1. Open the ``||variables.Variables||``  drawer, drag the ``||variables.change level by 1||`` into the ``||logic:else||`` block
 2. At the category drawer, click on the **Advanced** arrow to expand more category
 3. Open the ``||Functions.Functions||`` drawer, drag the ``||Functions.setup_level||`` function block into the ``||logic:else||`` block
@@ -446,8 +459,8 @@ function setup_level () {
 }
 ```
 
-## Step 11
-**Step 11**
+## Step 12
+**Step 12**
 1. Duplicate the ``||scene.place mySprite on top of random blue tile||`` from ``||Functions.create_dino||`` block
 2. Move the duplicated ``||scene.place mySprite on top of random blue tile||`` block into the ``||logic:else||`` block
 
@@ -472,8 +485,8 @@ function setup_level () {
 ```
     
 
-## Step 12
-**Step 12**
+## Step 13
+**Step 13**
 1. Open the ``||game.Game||``  drawer, drag the ``||game.splash ''||`` block into the ``||Functions.setup_level||`` block
 2. Make sure the ``||game.splash ''||`` block  is right after the ``||Functions.clear_level||`` block
 3. Open the ``||text.Text||``  drawer, drag the ``||text.join "Hello" "World" -+ ''||`` block onto the **..** of ``||game.splash ''||`` block 
@@ -503,8 +516,8 @@ function create_eggs(){}
 
 
 
-## Step 13
-**Step 13**
+## Step 14
+**Step 14**
 You have successfully created a game with multi-level!
 
 **Test:** Now, can you add another level (level 3) to your game?
@@ -515,8 +528,8 @@ You have successfully created a game with multi-level!
 ![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-3/master/assets/Screenshot_4.png)
 
 
-## Step 13
-** Step 13**
+## Step 15
+** Step 15**
 Congratulations! You have completed today's tutorial. 
 Test out your game. If it does not work, cross check your code with the codes in the tutorial hint.
 
