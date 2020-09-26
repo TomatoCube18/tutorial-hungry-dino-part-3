@@ -13,12 +13,7 @@
 3. Open the ``||info.Info||`` drawer, drag the  ``||info.change life by -1||`` into the ``||scene.on sprite of kind Player hits wall ||`` ``||variables.RED||`` block
 
 ### ~ tutorialhint
-```blocks
-setup_level()
-create_dino()
-info.setLife(3)
-info.setScore(0)
-```
+![screenshots](https://raw.githubusercontent.com/TomatoCube18/tutorial-hungry-dino-part-3/master/assets/Screenshot_7.png)
 
 ## Step 2
 **Step 2**
@@ -27,11 +22,6 @@ info.setScore(0)
 
 ### ~ tutorialhint
 ```blocks
-setup_level()
-create_dino()
-info.setLife(3)
-info.setScore(0)
-
 scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
     info.changeLifeBy(-1)
 })
